@@ -27,33 +27,11 @@ export const makeMainRoutes = () => {
         <Router history={history}>
             <div className="contenedor">
                 <Header />
-                <Navegacion />
-                <Route
-                    exact
-                    path="/"
-                    render={props => (
-                        <Productos
-                            // productos={resultado}
-                            busquedaProducto={this.busquedaProducto}
-                            auth={auth}
-                            {...props}
-                        />
-                    )}
-                />
+                <Navegacion auth={auth} />
+                <Route exact path="/" render={props => <Productos auth={auth} {...props} />} />
                 <Route exact path="/nosotros" component={Nosotros} />
-                <Route exact path="/contacto" component={Contacto} />
-                <Route
-                    exact
-                    path="/productos"
-                    render={props => (
-                        <Productos
-                            // productos={resultado}
-                            busquedaProducto={this.busquedaProducto}
-                            auth={auth}
-                            {...props}
-                        />
-                    )}
-                />
+                <Route exact path="/contacto" render={props => <Contacto auth={auth} {...props} />} />
+                <Route exact path="/productos" render={props => <Productos auth={auth} {...props} />} />
                 <Route
                     exact
                     path="/producto/:productoId"

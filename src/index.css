@@ -37,3 +37,22 @@ text-align: center;
 color: white;
 text-transform: uppercase;
 }
+
+.conetenedor-boton {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.conetenedor-boton .boton {
+  padding: .5rem 3rem;
+  background-color: #ffd742;
+  border-radius: 8px;
+  color: black;
+  text-transform: uppercase;
+}
+
+.conetenedor-boton .boton:hover {
+  cursor: pointer;
+}
